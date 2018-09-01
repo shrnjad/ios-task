@@ -22,6 +22,10 @@ class CampaignListingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        loadCampaigns()
+    }
+    
+    private func loadCampaigns() {
         // Load the campaign list and display it as soon as it is available.
         ServiceLocator.instance.networkingService
             .createObservableResponse(request: CampaignListingRequest())
@@ -32,11 +36,16 @@ class CampaignListingViewController: UIViewController {
                     self?.typedView.display(campaigns: campaigns)
                 case .error:
                     let loadingErrorViewController = LoadingErrorViewController()
+                    loadingErrorViewController.reloadHandler = { [weak self] in
+                        loadingErrorViewController.remove()
+                        self?.loadCampaigns()
+                    }
                     self?.add(loadingErrorViewController)
                 case .completed:
-                    print("completed")
+                    print("Campaign loading completed.")
                 }
             })
             .addDisposableTo(disposeBag)
     }
+
 }
