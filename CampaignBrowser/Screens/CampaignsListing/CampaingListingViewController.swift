@@ -26,8 +26,16 @@ class CampaignListingViewController: UIViewController {
         ServiceLocator.instance.networkingService
             .createObservableResponse(request: CampaignListingRequest())
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] campaigns in
-                self?.typedView.display(campaigns: campaigns)
+            .subscribe({ [weak self] event in
+                switch event {
+                case .next(let campaigns):
+                    self?.typedView.display(campaigns: campaigns)
+                case .error:
+                    let loadingErrorViewController = LoadingErrorViewController()
+                    self?.add(loadingErrorViewController)
+                case .completed:
+                    print("completed")
+                }
             })
             .addDisposableTo(disposeBag)
     }

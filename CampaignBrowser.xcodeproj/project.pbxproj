@@ -20,6 +20,9 @@
 		23F7B5DC1F59A70E00154DD9 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F7B5D91F59A70E00154DD9 /* ServiceLocator.swift */; };
 		23F7B5DE1F59A71B00154DD9 /* Campaign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F7B5DD1F59A71B00154DD9 /* Campaign.swift */; };
 		23F7B5E01F59A73000154DD9 /* CampaignListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F7B5DF1F59A73000154DD9 /* CampaignListingView.swift */; };
+		660CD68221398DCB0037503F /* LoadingErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CD68021398DCB0037503F /* LoadingErrorViewController.swift */; };
+		660CD68321398DCB0037503F /* LoadingErrorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 660CD68121398DCB0037503F /* LoadingErrorViewController.xib */; };
+		660CD68521398E590037503F /* UIViewController+ChildHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660CD68421398E590037503F /* UIViewController+ChildHandling.swift */; };
 		B8B5F1F166845F0ECFBB5E7F /* Pods_CampaignBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE6F773D7D1702E9482B13D /* Pods_CampaignBrowser.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +57,9 @@
 		23F7B5DF1F59A73000154DD9 /* CampaignListingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CampaignListingView.swift; path = Screens/CampaignsListing/CampaignListingView.swift; sourceTree = "<group>"; };
 		23F7B5E11F59A76A00154DD9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		47520166195A4003183C8D8A /* Pods-CampaignBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampaignBrowser.release.xcconfig"; path = "Pods/Target Support Files/Pods-CampaignBrowser/Pods-CampaignBrowser.release.xcconfig"; sourceTree = "<group>"; };
+		660CD68021398DCB0037503F /* LoadingErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadingErrorViewController.swift; path = Screens/LoadingErrorViewController.swift; sourceTree = "<group>"; };
+		660CD68121398DCB0037503F /* LoadingErrorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LoadingErrorViewController.xib; path = Screens/LoadingErrorViewController.xib; sourceTree = "<group>"; };
+		660CD68421398E590037503F /* UIViewController+ChildHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ChildHandling.swift"; sourceTree = "<group>"; };
 		6EE6F773D7D1702E9482B13D /* Pods_CampaignBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampaignBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFF862F2521D154547AA0BBB /* Pods-CampaignBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampaignBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CampaignBrowser/Pods-CampaignBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +134,9 @@
 			isa = PBXGroup;
 			children = (
 				23F7B5BA1F59597100154DD9 /* CampaignListing */,
+				660CD68021398DCB0037503F /* LoadingErrorViewController.swift */,
+				660CD68121398DCB0037503F /* LoadingErrorViewController.xib */,
+				660CD68421398E590037503F /* UIViewController+ChildHandling.swift */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -205,7 +214,6 @@
 				23F7B5931F5958F300154DD9 /* Frameworks */,
 				23F7B5941F5958F300154DD9 /* Resources */,
 				928D197F2B3EC2A944182FC0 /* [CP] Embed Pods Frameworks */,
-				EC8859DD7749A9A173682081 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -246,7 +254,7 @@
 				TargetAttributes = {
 					23F7B5951F5958F300154DD9 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = Y2NQ6FJX24;
+						DevelopmentTeam = L7T77F86RW;
 						ProvisioningStyle = Automatic;
 					};
 					23F7B5A91F5958F400154DD9 = {
@@ -283,6 +291,7 @@
 			files = (
 				23F7B5A41F5958F300154DD9 /* LaunchScreen.storyboard in Resources */,
 				23F7B5A11F5958F300154DD9 /* Assets.xcassets in Resources */,
+				660CD68321398DCB0037503F /* LoadingErrorViewController.xib in Resources */,
 				23F7B59F1F5958F300154DD9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,21 +346,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CampaignBrowser/Pods-CampaignBrowser-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EC8859DD7749A9A173682081 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CampaignBrowser/Pods-CampaignBrowser-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -361,8 +355,10 @@
 			files = (
 				23F7B5DC1F59A70E00154DD9 /* ServiceLocator.swift in Sources */,
 				23F7B59A1F5958F300154DD9 /* AppDelegate.swift in Sources */,
+				660CD68521398E590037503F /* UIViewController+ChildHandling.swift in Sources */,
 				23F7B5DB1F59A70E00154DD9 /* NetworkingService.swift in Sources */,
 				23F7B5C61F596F7F00154DD9 /* CampaignCell.swift in Sources */,
+				660CD68221398DCB0037503F /* LoadingErrorViewController.swift in Sources */,
 				23F7B5BC1F595A1800154DD9 /* CampaingListingViewController.swift in Sources */,
 				23F7B5D61F59985300154DD9 /* LabelWithPadding.swift in Sources */,
 				23F7B5E01F59A73000154DD9 /* CampaignListingView.swift in Sources */,
@@ -507,8 +503,9 @@
 			baseConfigurationReference = EFF862F2521D154547AA0BBB /* Pods-CampaignBrowser.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Y2NQ6FJX24;
+				DEVELOPMENT_TEAM = L7T77F86RW;
 				INFOPLIST_FILE = CampaignBrowser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.westwingnow.CampaignBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -521,8 +518,9 @@
 			baseConfigurationReference = 47520166195A4003183C8D8A /* Pods-CampaignBrowser.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = Y2NQ6FJX24;
+				DEVELOPMENT_TEAM = L7T77F86RW;
 				INFOPLIST_FILE = CampaignBrowser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.westwingnow.CampaignBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
